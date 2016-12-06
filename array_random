@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var a=0,b=10, max=20,min=1,c=Math.round(Math.random()*(max-min)+min);
+var array=[];
+while(a<b){
+a=random(a);
+array.push(a);
+}
+console.log(array)
+function random(value){
+return value+c;
+}
+</script>
+</body>
+</html>
