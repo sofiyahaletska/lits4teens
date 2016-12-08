@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+var x=1,y=1,n=5,array=[];
+array.push(x,y);
+while(n>0){
+ x=x+y;
+ n=n-1;
+ y=y+x;
+ n=n-1;
+ array.push(x,y);
+}
+console.log(array)
+</script>
+</body>
+</html>
