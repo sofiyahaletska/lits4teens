@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+var fibonacci=function(n){
+  var x=1,y=1,arr=[];
+  arr.push(x,y);
+  while(n>2){
+  y=arr.pop();
+  x=arr.pop();
+  arr.push(y);
+  y=x+y;
+  arr.push(y);
+  n--;
+  }
+return arr.pop();
+}
+console.log(fibonacci(8))
+</script>
+</body>
+</html>
