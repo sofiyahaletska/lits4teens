@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<input type="number" id="sh"><br/>
+<input type="text" id="hs"><br>
+<button onclick="find()">Знайти</button>
+<script>
+function find(){
+var n=parseInt(document.getElementById("sh").value);
+var fibonacci=function(n){
+  var x=1,y=1,arr=[];
+  arr.push(x,y);
+  while(n>2){
+  y=arr.pop();
+  x=arr.pop();
+  arr.push(y);
+  y=x+y;
+  arr.push(y);
+  n--;
+  }
+return arr.pop();
+}
+var b=fibonacci(n);
+document.getElementById("hs").value=b;
+}
+</script>
+</body>
+</html>
