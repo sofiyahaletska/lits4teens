@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<input type="number" id="sh">
+<input type="text" id="hs">
+<button onclick="find()">Find</button>
+<script> 
+function find(){
+var x=parseInt(document.getElementById("sh").value);
+function fibonacci(a,b,c){
+if(c>2){
+fibonacci(b,a+b,c-1)
+}
+else{
+document.getElementById("hs").value=b
+}
+}
+fibonacci(1,1,x)
+}
+</script>
+</body>
+</html>
