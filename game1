@@ -3,96 +3,50 @@
 <body>
 <button onclick="q()">1</button>
 <button onclick="w()">2</button>
-<button onclick="e()">3</button>
+<button onclick="e()">3</button><br>
 <button onclick="r()">4</button>
 <button onclick="t()">5</button>
-<button onclick="y()">6</button>
+<button onclick="y()">6</button><br>
 <button onclick="u()">7</button>
 <button onclick="i()">8</button>
 <button onclick="o()">9</button>
-<button onclick="p()">10</button>
 <script>
 var max=10,min=1;
 var x=Math.floor(Math.random()*(max-min)+min);
-function q(){
-if(x==1){
-alert("Ти виграв")
+function find(x,bn){
+if(x==bn){
+alert("Ти виграв(ла)")
 }
 else{
-alert("Ти програв")
+alert("Ти програв(ла)")
 }
+}
+function q(){
+find(x,1)
 }
 function w(){
-if(x==2){
-alert("Ти виграв")
-}
-else{
-alert("Ти програв")
-}
+find(x,2)
 }
 function e(){
-if(x==3){
-alert("Ти виграв")
-}
-else{
-alert("Ти програв")
-}
+find(x,3)
 }
 function r(){
-if(x==4){
-alert("Ти виграв")
-}
-else{
-alert("Ти програв")
-}
+find(x,4)
 }
 function t(){
-if(x==5){
-alert("Ти виграв")
-}
-else{
-alert("Ти програв")
-}
+find(x,5)
 }
 function y(){
-if(x==6){
-alert("Ти виграв")
-}
-else{
-alert("Ти програв")
-}
+find(x,6)
 }
 function u(){
-if(x==7){
-alert("Ти виграв")
-}
-else{
-alert("Ти програв")
-}
+find(x,7)
 }
 function i(){
-if(x==8){
-alert("Ти виграв")
-}
-else{
-alert("Ти програв")
-}
+find(x,8)
 }
 function o(){
-if(x==9){
-alert("Ти виграв")
-}
-else{
-alert("Ти програв")
-}
-}
-function p(){
-if(x==10){
-alert("Ти виграв")
-}
-else{
-alert("Ти програв")
-}
+find(x,9)
 }
 console.log(x)
 </script>
