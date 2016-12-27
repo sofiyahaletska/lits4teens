@@ -5,30 +5,27 @@
 <body>
 <script>
 function football(){
-var arr=[],n="",m="";
-arr.push(1,1,0,1,1,0,1,1,1,1,1,1,1);
+var arr=[],n="";
+arr.push(0,0,0,0,0,0,0,1,0,1,1,1,1);
 var a=arr.length;
 n=n+arr[0];
 for(var i=1;i<a;i++){
 if(arr[i]==arr[i-1]){
 n=n+arr[i];
+if(n.length>=7){
+return "Не безпечно";
+}
 }
 else{
 n="";
 n=n+arr[i+1];
 }
 }
-return n;
-}
-function danger(n){
-if(n.length>=7){
-return "Не безпечно"
-}
-else{
+if(n.length<7){
 return "Безпечно"
 }
 }
-console.log(danger(football()))
+console.log(football())
 </script>
 </body>
 </html>
