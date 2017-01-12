@@ -1,0 +1,56 @@
+<canvas id="c" width="800" height="800"></canvas>
+<script>
+var c = document.getElementById("c");
+var ctx = c.getContext("2d");
+ctx.fillStyle = "#000000";
+
+var PI = 3.1415;
+var time = 100
+
+function drawLine(x, y, angle, L) {
+
+  var a = angle * PI / 180;
+  var endX = x + Math.cos(a) * L;
+  var endY = y - Math.sin(a) * L
+
+ // window.setTimeout(function() {
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(endX, endY);
+    ctx.stroke();
+ // }, time)
+ // time += 5;
+  return {
+    x: endX,
+    y: endY
+  };
+}
+
+function drawSegment(x, y, angle, level, L, segments) {
+  var a = angle,
+    xy = {
+      x: x,
+      y: y
+    };
+  if (level == 0) {
+    xy = drawLine(xy.x, xy.y, a, L / 3);
+    xy = drawLine(xy.x, xy.y, a + 60, L / 3);
+    xy = drawLine(xy.x, xy.y, a - 60, L / 3);
+    xy = drawLine(xy.x, xy.y, a, L / 3);
+    return xy;
+  }
+  console.log(segments)
+  for (var i = 0; i < (segments || 1); i++) {
+    xy = drawSegment(xy.x, xy.y, a, level - 1, L / level);
+    if (level > 1) {
+      xy = drawSegment(xy.x, xy.y, a + 60, level - 1, L / level);
+      xy = drawSegment(xy.x, xy.y, a - 60, level - 1, L / level);
+      xy = drawSegment(xy.x, xy.y, a, level - 1, L / level);
+    }
+    a+=60;
+  }
+  return xy;
+}
+
+drawSegment(400, 400, 0, 2, 100, 6);
+</script>
